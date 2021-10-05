@@ -17,7 +17,7 @@
     /* preload images */
     var preload = {
       type: 'preload',
-      images: ['img/A.png', 'img/B.png', 'img/C.png', 'img/D.png', 'img/T.png']
+      images: ['img/A.svg', 'img/B.svg', 'img/C.svg', 'img/D.svg', 'img/T.svg']
     }
     timeline.push(preload);
 
@@ -46,10 +46,10 @@
 
     /* test trials */
     var test_stimuli = [
-      { stimulus: "img/A.png"},
-      { stimulus: "img/B.png"},
-      { stimulus: "img/C.png"},
-      { stimulus: "img/D.png"}
+      { stimulus: "img/A.svg"},
+      { stimulus: "img/B.svg"},
+      { stimulus: "img/C.svg"},
+      { stimulus: "img/D.svg"}
     ];
 
     var fixation = {
@@ -69,8 +69,7 @@
       stimulus: function(){
                 var html = `
                 <p></p>
-                <div style='float: center;'><img src='img/T.png' width="50%"></img></div>
-                <div class='float: center;'><img src="${jsPsych.timelineVariable('stimulus')}" width="50%"></img></div>
+                <div style='float: center;'><img src='img/T.svg' width="25%"></img><img src="${jsPsych.timelineVariable('stimulus')}" width="25%"></img></div>
                 <p></p>`;
                 return html;
             },  
@@ -78,7 +77,7 @@
       max: 5,
       slider_start: 3,
       slider_width: 500,
-      labels: [`1`, `2`, `3`, `4`, `5`],
+      labels: [`Not similar`, `2`, `3`, `4`, `Very similar`],
       prompt: `<p>How similar are these stimuli?</p>`,
       require_movement: true,
       data: {
